@@ -1,0 +1,28 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class WorkDoAndWhile {
+
+    public static void main(String[] args) {
+
+        //Usando a variavel senha para criar senha 
+        String senha = JOptionPane.showInputDialog("Criar senha");
+        
+        //Senha digitada igual a nada
+        String senhaDigitada = "";
+
+        //Faça
+        do {
+            //Usanado a variavel senha digitada para digitar a senha
+            senhaDigitada = JOptionPane.showInputDialog("Digite a senha ");
+
+        //Enquanto senha digitada for verdadeiro a senha     
+        } while (!senhaDigitada.equals(senha));
+
+        //Para imprimir a mensagem 
+        JOptionPane.showMessageDialog(null, "Seja Bem Vindo");
+
+    }
+
+}
