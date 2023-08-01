@@ -1,0 +1,29 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+
+public class WorkDoAndWhile2 {
+    
+    public static void main(String[] args) {
+        
+        int contador = 0;
+        int idade, soma = 0, media;
+        
+        do{
+            
+           idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a sua idade"));
+           if(idade != -1){
+              soma += idade;
+              contador ++;
+                           
+           }
+            
+        }while(idade != -1);
+        
+        media = soma / contador;
+        
+        JOptionPane.showMessageDialog(null, "Sua média é " + media);
+    }
+    
+}
