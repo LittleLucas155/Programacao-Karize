@@ -1,0 +1,47 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class WorkCinema {
+    
+    /*
+    Leozinho comprou um teatro e precisava de um programa para controlar
+    as vendas de sessões do seu teatro, para isso ele pediu para seu amigo criar
+    um programa para ele, que somava a quantidade de sessões vendidas e mostre o
+    total de sessões vendidas no final do dia.
+    */
+
+    public static void main(String[] args) {
+
+        //Variáveis
+        int totalIngressoVendido = 0;
+        int ingressosVendido;
+        int opcao;
+
+        //Esta lendo a frase "Seja Bem Vindo ao Teatro"
+        JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Teatro");
+
+        //Faça
+        do {
+
+            //Esta pedindo a quantidade de ingresso para a sessão
+            ingressosVendido = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de ingresso vendidos para sessão: "));
+
+            //Esta lendo a mensagem quantidade de ingressos vendidos 
+            JOptionPane.showMessageDialog(null, "Quantidade de ingressos vendidos " + ingressosVendido);
+            
+            //Aqui ele esta fazendo a soma de ingressos
+            totalIngressoVendido = totalIngressoVendido + ingressosVendido;
+
+            //Esta mostrando a mensagem, e a quantidade de ingressos vendidos 
+            JOptionPane.showMessageDialog(null, "Venda concluida! total de ingresso " + totalIngressoVendido);
+
+            //Esta perguntando se você deseja continuar ou encerrar o programa
+            opcao = Integer.parseInt(JOptionPane.showInputDialog("Deseja registrar a venda de ingressos para outra sessão? (Digite '1' para CONTINUAR ou '2' para ENCERRAR): "));
+
+            //Enquanto o usuário digitar a opção 1, o programa vai continuar no lop
+        } while (opcao == 1);
+
+    }
+
+}
