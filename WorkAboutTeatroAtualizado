@@ -1,0 +1,69 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class WorkCinema {
+
+ 
+    public static void main(String[] args) {
+
+        //Variáveis
+        double receitaCrianca, receitaAdulto, receitaTotal;
+        double valorIngressoCrianca;
+        double valorIngressoAdulto;
+        int ingressoCriancaVendido;
+        int ingressosAdultoVendido;
+        int totalIngressoVendido = 0;
+        int ingressosVendido;
+        int totalIngresso;
+        int totalAssentos;
+        int opcao;
+
+        //Esta lendo a frase "Seja Bem Vindo ao Teatro"
+        JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Teatro");
+
+        //Faça
+        do {
+            do {
+
+                totalAssentos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de assentos disponíveis no cinema:"));
+
+                valorIngressoCrianca = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do ingresso para crianças: "));
+
+                valorIngressoAdulto = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do ingresso para adultos: "));
+
+                ingressoCriancaVendido = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de ingressos para crianças vendidos: "));
+
+                ingressosAdultoVendido = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de ingressos para adultos vendidos: "));
+
+                totalIngresso = ingressoCriancaVendido + ingressosAdultoVendido;
+
+                receitaCrianca = valorIngressoCrianca * ingressoCriancaVendido;
+                receitaAdulto = valorIngressoAdulto * ingressosAdultoVendido;
+                receitaTotal = receitaCrianca + receitaAdulto;
+                
+                if (totalIngresso > totalAssentos){
+                    
+                    JOptionPane.showMessageDialog(null, "Número de assento inválido");
+                    
+                }
+
+            } while (totalIngresso > totalAssentos);
+
+            //Esta pedindo a quantidade de ingresso para a sessão
+            //Esta perguntando se você deseja continuar ou encerrar o programa
+            opcao = Integer.parseInt(JOptionPane.showInputDialog("Deseja registrar a venda de ingressos para outra sessão? (Digite '1' para CONTINUAR ou '2' para ENCERRAR): "));
+
+            JOptionPane.showMessageDialog(null, "===== Resumo da Receita =====\n"
+                    + "\nIngressos vendidos para crianças: " + ingressoCriancaVendido
+                    + "\nReceita de ingressos para crianças: R$" + receitaCrianca
+                    + "\nIngressos vendidos para adultos: " + ingressosAdultoVendido
+                    + "\nReceita de ingressos para adultos: R$" + receitaAdulto
+                    + "\nReceita total: R$" + receitaTotal);
+
+            //Enquanto o usuário digitar a opção 1, o programa vai continuar no lop
+        } while (opcao == 1);
+
+    }
+
+}
