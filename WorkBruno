@@ -1,0 +1,484 @@
+Bruno
+
+-------------------------------------------DO WHILE------------------------------------------------
+Desenvolva um aplicativo onde o usuário deve criar uma senha
+para futuramente efetuar um "login" enquanto a senha estiver errada 
+o sistema pede para o usuário digitar a senha e se a senha for igual
+a que ele criou o sistema exibe uma mensagem de bem vindo*/
+package revisaoprimeirosemestre;
+
+import javax.swing.JOptionPane;
+
+public class DoWhile {
+
+    public static void main(String[] args) {
+        //Inicia uma variável com nome senha e pede para o usuário criar uma senha
+        String senha = JOptionPane.showInputDialog("Criar senhar ");
+        //Inicia uma variável do tipo String com vazio
+        String senhaDigitada = "";
+
+        /*Estrutura de repetição onde se a senha for diferente
+        da senha criada o sistema pede para informar a senha até
+        ser a senha correta*/
+        do {
+            //Pede para o usuário digitar a senha
+            senhaDigitada = JOptionPane.showInputDialog("Digite a senha ");
+            //Valida se a senha é igual
+        } while (!senhaDigitada.equals(senha));
+
+        //Impressão da mensagem de bem vindo
+        JOptionPane.showMessageDialog(null, "Seja Bem Vindo!");
+
+    }
+}
+-----------------------------------------------------------------------------------------------------
+
+---------------------------------WHILE----------------------------------------ATUALIZAAAAADOOOOOO
+Você é um cientista pesquisando uma população de coelhos em uma ilha isolada.
+Inicialmente, existem 50 coelhos na ilha. A cada mês, o número de coelhos na ilha aumenta significativamente (DOBRA),
+pois eles se reproduzem rapidamente. No entanto, a ilha tem recursos limitados e pode suportar apenas um certo 
+número de coelhos.(Usuário define a capacidade Máxima e quantos coelhos morrem).
+
+Calcule em quantos meses a ilha atingirá a capacidade máxima, e também o excedente de coelhos.
+
+ public static void main(String[] args) {
+        //Variáveis Constantes
+        int populacaoInicial = 50;
+
+        // Variáveis 
+        //Pede a capacidade máxima da ilha
+        int capacidadeMaxima = Integer.parseInt(JOptionPane.showInputDialog("Estipule a capacidade máxima da ilha"));
+        //Pede a quantidade de mortes de coelhos
+        int mortesCoelhos = Integer.parseInt(JOptionPane.showInputDialog("Quantos coelhos morreram?!"));
+        //Subtração da populacão inicial com a quantidade de coelhos mortos informados
+        populacaoInicial -= mortesCoelhos;
+        int meses = 0;
+        String op = "S";
+        int excedentes = 0;
+
+        //Estrutura de repetição para calcular quantos meses leva para atingir a capacidade máxima
+        do {
+            //Estrutura de decisão
+            if (populacaoInicial * 2 <= capacidadeMaxima) {
+                populacaoInicial *= 2;
+                System.out.println("população:  " + populacaoInicial);
+                meses++;
+
+            } else {
+                op = "N";
+                //Calcula a quantidade de excedentes de coelhos
+                excedentes = populacaoInicial * 2 - capacidadeMaxima;
+
+            }
+        } while (op.equals("S"));
+
+        //Saida
+        JOptionPane.showMessageDialog(null, "A população de coelhos na ilha excederá a capacidade máxima após " + meses + " meses."
+                + "\nMortes de coelhos: " + mortesCoelhos
+                + "\nExcedentes de coelhos: " + excedentes);
+    }
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ivanir
+
+package revisao_2semestre;
+
+import javax.swing.JOptionPane;
+
+
+public class Revisao_2semestre_IF_E {
+
+/*/ Situação problema: Temos uma corrida de carro na cidade. Os pilotos tem que ser maior de idade  e não podem ser idosos para poder participar.
+ Verificar se o piloto é de menor, maior ou idoso.
+(menor de idade), até 17 anos;
+(maior de idade), entre 18 e 64 anos;
+//*(Idoso), igual ou maior que 65 anos.
+
+     public static void main(String[] args) {
+
+        //Váriaveis
+        String op = "s";
+        String nome;
+        String mensagem = "";
+        //usamos do while para que o usuario fique informando quantas vezes forem necesario
+        do {
+            nome = JOptionPane.showInputDialog("Informe o nome:");
+            // variáveis do escopo
+            int idade;
+            // Dado informado pelo usuário:
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade para " + nome + ":"));
+            // Estrutura de decisão com a condição if else:
+            if (idade < 18) {
+                mensagem = "menor de idade";
+            } else if (idade >= 18 && idade <= 64) {
+                mensagem = "maior de idade";
+            } else {
+                mensagem = "Idoso";
+            }
+            // Impressão das informações:
+            JOptionPane.showMessageDialog(null, nome + " é " + mensagem + ".");
+            op = JOptionPane.showInputDialog("Deseja continuar?");
+            //Vai continuar na estrutura de repetição enquanto usuário informar "s"
+        } while (op.equals("s"));
+    }
+}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+Nicolas
+
+package napaz;
+
+/*Uma empresa pediu para você criar um código que consiga colocar 5 produtos e seus valores.
+Deve ser criado um vetor para valores e produtos,
+os produtos e os valores devem aparecer conforme forem inseridos com seus correspondentes.*/
+
+import javax.swing.JOptionPane;
+
+public class vetor {
+
+    public static void main(String[] args) {
+        
+	//Declarações das variáveis
+        
+	int valores[] = new int[5];
+        String produtos[] = new String[5];
+       
+	 //Aqui entramos no laço de repetição até alcançar o número de valores desejados
+       
+	 for (int i = 0; i <= 4; i++) {
+            
+            //Aqui pedimos para o usuário adicionar os produtos
+            //Adicionamos os produtos no vetor "produto"
+            produtos[i] = JOptionPane.showInputDialog("Informe os produto: ");
+           
+            //Aqui pedimos para o usuário adicionar os valores
+            //Adicionamos os valores para a vetor "valores"
+            valores[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe o valore: "));
+        }
+        //Aqui entramos em outro laço de repetição
+        for (int k = 0; k <= 4; k++) {
+            //Aqui imprimimos os produtos e valores que foram inseridos
+            JOptionPane.showMessageDialog(null, "Produto informado: " + produtos[k] + "\nValor: " + valores[k]);
+            //FIM DO PROGRAMA
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------
+Clara
+Um professor precisa de um programa que o ajude a registrar notas e calcular a média de sua turma. 
+package revisaoprimeirosemestre;
+
+import javax.swing.JOptionPane;
+
+
+public class Clara {
+    public static void main(String[] args) {
+        //declaração das váriaveis e vetores
+        
+        String[] nome = new String[999]; //vetor que guardará os nomes dos alunos
+        double[] nota= new double[999]; //vetor que guardará as notas
+        double soma = 0.0; //variável que somará todas as notas de determinado aluno
+        double[] media = new double[999]; //vetor que guardará as médias 
+   
+        
+        //registra a resposta do usuário quanto à quantidade de alunos e notas que deseja informar 
+        int quantidadeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de alunos que deseja registrar: "));
+        int quantidadeNotas = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de notas que deseja registrar: "));
+                    
+        //laço de repetição que fará o registro dos nomes, percorrendo o vetor quantidade de vezes até que atinja a quantidade desejada pelo usuário           
+        for (int i = 0; i < quantidadeAlunos; i++) {
+            //registro do nome
+            nome[i] = JOptionPane.showInputDialog("Informe o nome do aluno: ");
+            //imprime o nome 
+            System.out.println("\nAluno: "+nome[i]);
+                 
+            //laço de repetição que fará o registro das notas, percorrendo o vetor quantidade de vezes até que atinja a quantidade desejada pelo usuário  
+            for (int j = 0; j < quantidadeNotas; j++) {
+                //registro da nota
+                nota[j] = Double.parseDouble(JOptionPane.showInputDialog("Informe a nota: "));
+                //imprime a nota
+                System.out.println("Nota["+(j+1)+"]: "+nota[j]);
+                
+                //soma de notas 
+                soma+= nota[j];
+            }
+            //equação de média que divide a soma das notas com a quantidade de notas registradas
+            media[i] = (soma/quantidadeNotas); 
+            //a variável é zerada para que não haja conflito com o calculo de média do próximo aluno
+            soma = 0.0;
+            //imporime a média 
+            System.out.println("Média: "+media[i]);
+            }
+
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+S
+
+________________________________________________________
+Rodrigo
+
+//1 - Situação Problema: Calcular o aumento de salário de acordo com 
+//o cargo. Ler salário e o código do cargo. Calcular o aumento salarial
+//de acordo com o cargo da pessoa conforme a tabela abaixo. 
+//Imprimir o nome do cargo, o valor do aumento e o novo salário.
+// aumento Gerente Industrial 50%, Diretor financeiro 30%.
+
+import javax.swing.JOptionPane;
+
+
+public class prob {
+    
+    public static void main(String[] args) {
+        
+        int cargo = Integer.parseInt(JOptionPane.showInputDialog("Informe o codigo do cargo(1 ou 2) : "));
+        float salario = Float.parseFloat(JOptionPane.showInputDialog("Informe seu salario: "));
+        
+        String salarioAtual;
+        
+       salarioAtual = switch (cargo) {
+            case 1 -> "Gerente Industrial R$ " +(salario + (50*salario)/100);
+            case 2 -> "Diretor financeiro R$ " +(salario + (30*salario)/100);
+            default -> "Cargo inesistente R$ ";     
+        };
+    JOptionPane.showMessageDialog(null, salarioAtual);
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Matheus
+
+Pedro dos games tem uma serio problema com o calendário. Ele necessita de um programa que mostre-o exatamente
+o dia da semana na data que ele informou. Padrão de nomenclatura é DD/MM/AAAA
+ 
+package javaapplication1;
+
+//variáveis globais
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class JavaApplication1 {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite uma data no formato dd/MM/yyyy: ");
+        String inputDate = scanner.nextLine();
+        
+        DateTimeFormatter biblioteca = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        // DateTimeFormatter e usado para manipular datas com o java 
+        // Na linha acima estou falando para o programa que DateTimeFormatter recebe uma biblioteca (Que é uma variavel)
+        // Logo em seguida mostro o padrão que o usuario vai informa a data que ele deseja
+        
+        LocalDate date = LocalDate.parse(inputDate, biblioteca);
+        
+        // LocalDate é um objeto date-time imutável( que não está sujeito a mudar,
+        //que representa uma data, geralmente visualizado como dia/mês/ano.
+        
+        String diaDaSemana = "";
+        
+        switch (date.getDayOfWeek().getValue()) {
+            case 1:
+                diaDaSemana = "Segunda-feira";
+                break;
+            case 2:
+                diaDaSemana = "Terça-feira";
+                break;
+            case 3:
+                diaDaSemana = "Quarta-feira";
+                break;
+            case 4:
+                diaDaSemana = "Quinta-feira";
+                break;
+            case 5:
+                diaDaSemana = "Sexta-feira";
+                break;
+            case 6:
+                diaDaSemana = "Sábado";
+                break;
+            case 7:
+                diaDaSemana = "Domingo";
+                break;
+            default:
+                diaDaSemana = "Data inválida";
+                break;
+        }
+        
+        System.out.println("O dia da semana é: " + diaDaSemana);
+        
+        scanner.close();
+    }
+}
+
+}
+
+ 
+============================================================================================================
+
+Situações problemas exercícios.
+1. >Vetor (NICOLAS)
+1.8 times de futebol precisam ser separados entre time A e time B para as quartas de final, Peça 8 times de futebol e os separe entre time A e time B e depois faça saída de dados.
+
+2.> If-else (BRUNO)
+2.   Um campeonato de futebol precisa saber o resultado de cada partida (quem ganhou quem perdeu ou se ouve um empate), faça um programa que peça o nome de 2 times, pergunte a eles o resultado dos jogos e mostre na tela quem venceu.
+
+3. >Do while (Rodrigo)
+3. Uma balança precisa solicitar 4 pesos de 4 frutas diferentes para saber qual peso é a maior, solicite 4 pesos de frutas para o programa e no final mostre qual é fruta tem o maior peso.
+
+4. >  switch case. (Matheus)
+4.  Uma academia decidiu instalar um sistema. O usuário deve escolher um exercício e logo o programa diz a quantidade de percas de calorias referente a 30 minutos daquele exercício.
+import java.util.Scanner;
+
+public class Academia {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Escolha um exercício: ");
+            System.out.println("1 - Musculação");
+            System.out.println("2 - Corrida");
+            System.out.println("3 - Bicicleta");
+            System.out.println("0 - Sair");
+
+            int escolha = scanner.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    exibirCaloriasPerdidas("Musculação", 300);
+                    break;
+                case 2:
+                    exibirCaloriasPerdidas("Corrida", 400);
+                    break;
+                case 3:
+                    exibirCaloriasPerdidas("Bicicleta", 250);
+                    break;
+                case 0:
+                    System.out.println("Saindo do programa.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Opção inválida. Por favor, escolha novamente.");
+            }
+        }
+    }
+
+    public static void exibirCaloriasPerdidas(String exercicio, int calorias) {
+        System.out.println("Você perdeu " + calorias + " calorias em 30 minutos de " + exercicio + ".");
+    }
+}
+
+
+
+
+5>  for.(clara)
+5. Crie um algoritmo com array que receba o nome do aluno, e 3 notas, ao fim gere sua média e faça a saída de dados.
+
+6- for (Ivanir)
+6.Um funcionário recebeu a tarefa de registrar o salário de 3 funcionário de uma respectiva área e depois o programa terá que informar o maior salário até o menor salário dos funcionários e falar o nome deles.
+
+=====================================================================================================================
+Problema Ivanir
+
+
+import javax.swing.JOptionPane;
+
+
+public class Exercicio_6 {
+    
+    /*6.(for) Um funcionário recebeu a tarefa de registrar o salário de 3 funcionário 
+    de uma respectiva área e depois o programa terá que informar o maior salário 
+    até o menor salário dos funcionários e falar o nome deles.*/
+
+    
+    public static void main(String[] args) {
+        
+       Float maiorSalario = 0.0f, medioSalario = 0.0f, menorSalario = 0.0f;
+       String maiorNome = "", medioNome = "", menorNome = "";
+       
+       String[] nome = new String[999];
+       Float[] salario = new Float[999];
+       
+        for (int i = 0; i < 3 ; i++) {
+            
+            nome[i] = JOptionPane.showInputDialog("Informe nome do funcionário [ " +(i+1)+"]");
+            salario[i] = Float.parseFloat(JOptionPane.showInputDialog("Informe salario do funcionário [ " +(i+1)+"]"));
+            
+            if (salario[i] > maiorSalario){
+                maiorSalario = salario[i];
+                maiorNome = nome[i];
+                
+                
+                if(maiorSalario > 1){
+                    maiorSalario = medioSalario;
+                    maiorNome = maiorNome;
+                }
+    
+            }else if (salario[i] < maiorSalario && salario[i] > menorSalario){
+                
+                
+                medioSalario = salario[i];
+                medioNome = nome[i];  
+                               
+    
+            }else{ 
+                menorSalario = salario[i];
+                 menorNome = nome[i]; 
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null,"Maior salario é de : " + maiorNome + " Com salario de : R$ " + maiorSalario
+                +"\n" + "Médio salario é de : " + menorNome + " Com salario de : R$ " +  menorSalario
+                +"\n" + "menor salario é de : " + medioNome + " Com salario de : R$ " +  medioSalario);
+  
+    }
+    
+}
+
+
+-------------------------------------------
+Rodrigo -
+public class FrutasRodrigo {
+
+    public static void main(String[] args) {
+        
+        String maiorFruta = "";
+        double maiorPeso = 0.0;
+        double maiorPreco = 0.0;
+
+        String [] fruta = new String[999];
+        double [] peso = new double[999];
+        double [] preco = new double[999];
+
+        for (int i = 0; i < 4; i++) {
+
+            fruta[i] = JOptionPane.showInputDialog("Informe o nome da fruta: ");
+            peso[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe do peso da Fruta: "));
+            preco[i] = Float.parseFloat(JOptionPane.showInputDialog("Informe o preço da Fruta: "));
+            
+            
+            if(peso[i]> maiorPeso){
+                maiorPeso= peso[i];
+                maiorFruta= fruta[i];
+                maiorPreco= preco[i];
+            }
+        }
+        JOptionPane.showMessageDialog(null,"A Maior Fruta é com peso de: " + maiorPeso + "\nNome de fruta: " + maiorFruta + "\nMaior Preço: " + maiorPreco);
+    }
+
+}
+
+
+
+
+
+
+
+
