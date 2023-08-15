@@ -1,0 +1,61 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class ProvaKarize2 {
+
+    public static void main(String[] args) {
+
+        int candidato1 = 0;
+        int candidato2 = 0;
+        int candidato3 = 0;
+        int candidato4 = 0;
+        int votosNulos = 0;
+        int votosEmBranco = 0;
+        int codigo;
+        String input;
+
+        JOptionPane.showMessageDialog(null, "Informe o código do candidato ou 0 para ENCERRAR ");
+
+        input = JOptionPane.showInputDialog("Código do candidato:");
+
+        while (!input.equals("0")) {
+            codigo = Integer.parseInt(input);
+
+            switch (codigo) {
+                case 1:
+                    candidato1++;
+                    break;
+                case 2:
+                    candidato2++;
+                    break;
+                case 3:
+                    candidato3++;
+                    break;
+                case 4:
+                    candidato4++;
+                    break;
+                case 5:
+                    votosNulos++;
+                    break;
+                case 6:
+                    votosEmBranco++;
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Código inválido!");
+                    break;
+            }
+
+            input = JOptionPane.showInputDialog("Código do candidato:");
+        }
+
+        JOptionPane.showMessageDialog(null, "======Total de votos para cada candidato======\n"
+                + "\nCandidato1 " + candidato1
+                + "\nCandidato2 " + candidato2
+                + "\nCandidato3 " + candidato3
+                + "\nCandidato4 " + candidato4
+                + "\nVotos nulos " + votosNulos
+                + "\nVotos em branco " + votosEmBranco);
+
+    }
+}
