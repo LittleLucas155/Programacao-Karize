@@ -1,0 +1,38 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class WorkCoelho {
+
+    public static void main(String[] args) {
+
+        int capacidadeMaxima;
+        int coelhosQueMorreram;
+        int populaçaoInicial = 50;
+        int meses = 0;
+        int excedentes = 0;
+
+        capacidadeMaxima = Integer.parseInt(JOptionPane.showInputDialog("Digite a capacidade maxima da ilha: "));
+
+        coelhosQueMorreram = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de coelho que morreram a cada mês? "));
+
+        if (capacidadeMaxima <= 0 || coelhosQueMorreram <= 0) {
+            JOptionPane.showMessageDialog(null, "Entrada inválida."
+                    + "\nA capacidade máxima deve ser maior que zero e a quantidade de coelhos que morrem deve ser não negativa.");
+            return;
+        }
+
+        while (populaçaoInicial < capacidadeMaxima) {
+            populaçaoInicial *= 2;
+            populaçaoInicial -= coelhosQueMorreram;
+            meses++;
+        }
+
+        excedentes = populaçaoInicial - capacidadeMaxima;
+
+        JOptionPane.showMessageDialog(null, "A ilha atingirá a capacidade máxima em " + meses + " meses "
+                + "\nO excedente de coelhos será de " + excedentes + " coelhos");
+
+    }
+
+}
