@@ -1,0 +1,24 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class ProvaKarize {
+
+    public static void main(String[] args) {
+
+        double alturaChico = 1.50;
+        double crescimentoChico = 0.02;
+        double alturaZe = 1.10;
+        double crescimentoZe = 0.03;
+        int anos = 0;
+
+        while (alturaZe <= alturaChico) {
+            alturaChico += crescimentoChico;
+            alturaZe += crescimentoZe;
+            anos++;
+
+        }
+
+        JOptionPane.showMessageDialog(null, "Serão necessário " + anos + " anos " + "para Zé ter a mesma altura que Chico");
+    }
+}
