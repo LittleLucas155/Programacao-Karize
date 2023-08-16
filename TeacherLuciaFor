@@ -1,0 +1,58 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class TeacherLucia {
+
+    public static void main(String[] args) {
+
+        int turma = 0, continuar;
+
+        do {
+            //Variáveis
+            int x = 0;
+            float nota;
+            float somaNota = 0;
+            String relatorio = "";
+            String status;
+            turma = Integer.parseInt(JOptionPane.showInputDialog("Informe quantos anos tem na turma: "));
+
+            String[] nome = new String[turma];
+            float[] media = new float[turma];
+
+            //For para alimentar vetor de nomes e média
+            for (int i = 0; i < turma; i++) {
+                nome[i] = JOptionPane.showInputDialog("Informe o nome do aluno" + (1 + i) + ": ");
+                for (int j = 0; j < 3; j++) {
+                    nota = Float.parseFloat(JOptionPane.showInputDialog("Informe a nota " + (j + 1) + ":"));
+                    somaNota += nota;
+                }
+
+                media[i] = somaNota / 3;
+                somaNota = 0;
+            }
+
+            //For para ler e montar relatório
+            for (int i = 0; i < turma; i++) {
+
+                if (media[i] >= 7) {
+                    status = "Aprovado";
+
+                } else if (media[i] >= 6 && media[i] < 7) {
+                    status = "em Exame";
+
+                } else {
+                    status = "Reprovado";
+                }
+                relatorio += "Aluno: " + nome[i] + "\nMédia: " + media[i] + " Status " + status + "\n";
+
+            }
+            //Imprimir Relatório
+            JOptionPane.showMessageDialog(null, relatorio);
+            
+            //Deseja Continuar?
+            continuar = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar uma nova turma? \n1 - Sim \n2 - Não"));
+        } while (continuar == 1);
+    }
+
+}
