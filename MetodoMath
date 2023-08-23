@@ -1,0 +1,26 @@
+
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+
+public class MetodosMath {
+    
+    //Use o metodo math para encontrar o maior valor entre x e y.
+    
+    public static void main(String[] args) {
+        
+        int x, y;
+        
+        x = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor de x: "));
+        y = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor de y: "));
+        
+        JOptionPane.showMessageDialog(null,"O mairo valor é: " + Math.max(x, y));
+    }
+    
+}
+
+
+
+
+
