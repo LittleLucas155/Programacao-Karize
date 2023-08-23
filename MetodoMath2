@@ -1,0 +1,22 @@
+
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+
+public class MetodoMath2 {
+    
+    //Use o metodo math para encontrar a raiz quadrada
+    
+    public static void main(String[] args) {
+        
+       double x,y;
+        
+        x = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor de x: "));
+        y = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor de y: "));
+        
+        JOptionPane.showMessageDialog(null,"O valor da raiz quadrada de x é: " + Math.sqrt(x) 
+                                         + "O valro da raiz quadrada de y é: " + Math.sqrt(y));
+    }
+    
+}
