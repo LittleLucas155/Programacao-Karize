@@ -1,0 +1,19 @@
+
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+
+public class MetodosMath3 {
+    
+    //Use o metodo math para encontrar um numero aleatorio
+    
+    public static void main(String[] args) {
+        
+        int numeroAleatorio = (int)(Math.random()* 101);
+                     
+        JOptionPane.showMessageDialog(null, "O numero aleatorio é: " + numeroAleatorio);
+    }
+    
+}
+
