@@ -1,0 +1,36 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class MetodoMath6 {
+
+ /*Escreva um programa que leia um conjunto de números positivos que serão
+   informados pelo usuário, e apresente qual foi o maior e o menor a cada interação,
+   isso é cada vez que o usuário informar um número valide se ele é o menor ou o
+   maior já digitado. Quando o usuário desistir de informar ele deve ter opção de sair.
+  (while).*/
+
+    public static void main(String[] args) {
+
+        String op = "S";
+        int num;
+        int maior = Integer.MIN_VALUE;
+        int menor = Integer.MAX_VALUE;
+
+        do {
+
+            num = Integer.parseInt(JOptionPane.showInputDialog("Digite um numero: "));
+
+            menor = Math.min(num, menor);
+            maior = Math.max(num, maior);
+
+            JOptionPane.showMessageDialog(null, "O menor valor é: " + menor
+                    + "\n O maior valor digitado é: " + maior);
+
+            op = JOptionPane.showInputDialog("Deseja sair? \n S = SIM \n N = NÃO").toUpperCase();
+
+        } while (op.equals("N"));
+
+    }
+
+}
