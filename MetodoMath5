@@ -1,0 +1,38 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class MetodosMath5 {
+
+//Escreva um programa que calcule e exiba a soma dos quadrados dos 20 primeiros
+números inteiros positivos ímpares a partir do número informado pelo usuário menor
+que 10 e maior que zero
+
+    public static void main(String[] args) {
+
+        int num;
+        int cont = 0;
+        double somaQuadrado = 0;
+        double soma = 0;
+        
+        do {
+            num = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor maior que 0 e menor que 10: "));
+
+        } while (num <= 0 || num >= 10);
+
+        do {
+            if (num % 2 != 0) {
+                somaQuadrado += Math.pow(num, 2);
+                soma += somaQuadrado;
+                cont++;                
+
+                JOptionPane.showMessageDialog(null,cont + " o valor " + num + " elevado ao quadrado " 
+                                                        + " soma dos quadrado " + soma);
+            }
+            
+            num ++;
+            
+        } while (cont < 20);
+    }
+
+}
