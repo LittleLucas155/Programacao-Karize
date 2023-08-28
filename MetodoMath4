@@ -1,0 +1,20 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class MetodosMath4 {
+
+// Use o método correto para elevar ao cubo x e ao quadrado y
+
+    public static void main(String[] args) {
+
+        int x, y;
+        
+        x = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de x: "));
+        y = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de y: "));
+
+        JOptionPane.showMessageDialog(null, "x elevado ao quadrado é: " + Math.pow(x, 2)
+                                          + "\ny elevado ao cubo é: " + Math.pow(y, 3));
+    }
+
+}
