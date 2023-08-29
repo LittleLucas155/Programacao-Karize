@@ -1,0 +1,22 @@
+
+package workdoandwhile;
+
+
+public class MetodoString {
+    
+    public static void main(String[] args) {
+        
+        String palavra = "How are you?";
+        
+        System.out.println(palavra.startsWith("How"));
+        System.out.println(palavra.endsWith("you?"));
+        
+        String[] nome = {"Maria","Dudu"};
+        
+        System.out.println("nome: " + nome[0].startsWith("M"));
+        System.out.println("nome: " + nome[1].endsWith("du"));
+        
+        
+    }
+    
+}
