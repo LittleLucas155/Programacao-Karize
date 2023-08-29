@@ -1,0 +1,38 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class MetodoMath8 {
+    
+/*Faça um programa que leia 10 valores inteiros e positivos e:
+• Encontre o maior valor
+• Encontre o menor valor
+• Calcule a média dos números lidos */
+
+    public static void main(String[] args) {
+
+        int cont = 1, num;
+        int maior = Integer.MIN_VALUE;
+        int menor = Integer.MAX_VALUE;
+        int media = 0;
+
+        for (int i = 0; cont <= 10; i++) {
+            num = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor positivo "));
+
+            if (num > 0) {
+                maior = Math.max(num, maior);
+                menor = Math.min(num, menor);
+                System.out.println(cont + "° ");
+                System.out.println("O maior é: " + maior);
+                System.out.println("O menor é: " + menor + "\n");
+
+                media += num;
+                cont++;
+                
+            } else {                
+                JOptionPane.showMessageDialog(null, "Digite um valor válido, positivo");
+            }
+        }
+    }
+
+}
