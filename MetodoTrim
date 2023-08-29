@@ -1,0 +1,17 @@
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+
+public class MetodoTrim {
+
+    public static void main(String[] args) {
+
+        String fraseDoDia = JOptionPane.showInputDialog("Digite a frase do dia: ");
+
+        JOptionPane.showMessageDialog(null, "Frase do dia sem trim: " + fraseDoDia);
+
+        //O trim ele tira o espaço no começo da frase
+        JOptionPane.showMessageDialog(null, "Frase do dia com trim: " + fraseDoDia.trim());
+    }
+
+}
