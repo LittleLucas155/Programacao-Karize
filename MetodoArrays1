@@ -1,0 +1,20 @@
+
+package workdoandwhile;
+
+import javax.swing.JOptionPane;
+import java.util.Arrays;
+
+public class MetodoArrays1 {
+    
+    public static void main(String[] args) {
+        
+        String[] nome = { "\n\nDudu Francisconi", "\nLucas Silverio", "\nGabriel Abel", "\nErick Aredes", "\nLeo Vitorino"
+            + "\nCarlos daniel", "\nBejo Alves", "\nEverton Machado", "\nNicolas Fagundes", "\nThiago Kaue\n\n" };
+        
+        JOptionPane.showMessageDialog(null,"Vetor de nomes \n\n" + Arrays.toString(nome));
+        
+        Arrays.sort(nome);
+        JOptionPane.showMessageDialog(null,"Vetor de nomes \n\n" + Arrays.toString(nome));
+    }
+    
+}
