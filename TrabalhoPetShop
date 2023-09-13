@@ -1,0 +1,36 @@
+package trabalhogrupo;
+
+import javax.swing.JOptionPane;
+
+public class TrabalhoGrupo {
+
+    public static void main(String[] args) {
+
+        String nome, especie, raca, historicoMedico, sair = "S";
+        int idade;
+
+        do {
+            nome = JOptionPane.showInputDialog("Digite o nome do animal: ");
+
+            especie = JOptionPane.showInputDialog("Digite a especie do animal: ");
+
+            raca = JOptionPane.showInputDialog("Digite a raça do animal: ");
+
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do animal: "));
+
+            historicoMedico = JOptionPane.showInputDialog("Digite o historico medico do animal: ");
+
+            sair = JOptionPane.showInputDialog("Deseja sair? \n S = Sim \n N = Nao ");
+
+        } while (!sair.equals("S"));
+
+        JOptionPane.showMessageDialog(null, "========== RELATORIO ANIMAL ========== \n"
+                + "\nNome do animal: " + nome
+                + "\nEspecie do animal: " + especie
+                + "\nRaça do animal: " + raca
+                + "\nIdade do animal: " + idade
+                + "\nHistorico medico do animal: " + historicoMedico);
+
+    }
+
+}
