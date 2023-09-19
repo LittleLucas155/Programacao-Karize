@@ -1,0 +1,56 @@
+package trabalhopetshop;
+
+import javax.swing.JOptionPane;
+
+public class TrabalhoPetShop {
+
+    public static void main(String[] args) {
+
+        //Variaveis
+        String nomeAnimal, especie, raca, nomeCliente ;
+        String nomeDigitado = null;
+        String relatorio = "";
+        String sair = "Nao"; 
+        String historicoMedico = "Nao";
+        String doenca = "Sem doença";
+        int idade;
+
+        //Faça
+        do {
+            nomeCliente = JOptionPane.showInputDialog("Digite o nome do cliente: ");
+
+            nomeAnimal = JOptionPane.showInputDialog("Digite o nome do animal: ");
+
+            especie = JOptionPane.showInputDialog("Digite a especie do animal: ");
+
+            raca = JOptionPane.showInputDialog("Digite a raça do animal: ");
+
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do animal: "));
+
+            //ToUpperCase para a resposta ser maiuscula ou minuscula
+            historicoMedico = JOptionPane.showInputDialog("O animal tem algum problema de saude? \n S = Sim \n N = Nao ").toUpperCase();
+
+            //Equals e igual e igual, usado para descisão
+            if (historicoMedico.equals("SIM")) {
+                doenca = JOptionPane.showInputDialog("Qual e o problema? ");
+
+            }
+
+            relatorio += "========== RELATORIO ANIMAL ========== \n"
+                    + "\nNome do cliente: " + nomeCliente
+                    + "\nNome do animal: " + nomeAnimal
+                    + "\nEspecie do animal: " + especie
+                    + "\nRaça do animal: " + raca
+                    + "\nIdade do animal: " + idade
+                    + "\nA doença do animal é: " + doenca + "\n\n";
+
+            doenca = "Sem doença";
+            sair = JOptionPane.showInputDialog("Deseja cadastrar um novo animal? \n S = Sim \n N = Nao ").toUpperCase();
+
+        } while (sair.equals("SIM"));
+
+        JOptionPane.showMessageDialog(null, relatorio);
+
+    }
+
+}
