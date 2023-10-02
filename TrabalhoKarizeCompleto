@@ -49,6 +49,7 @@ public class TrabalhoPetShop {
 
         } while (sair.equals("SIM"));
 
+        //Imprimir "Relatorio Animal"
         JOptionPane.showMessageDialog(null, relatorio);
 
     }
