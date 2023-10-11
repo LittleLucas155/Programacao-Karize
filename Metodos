@@ -1,0 +1,98 @@
+package aula1;
+
+import javax.swing.JOptionPane;
+
+public class Pessoa {
+
+    //atributos
+    String nome;
+    int idade;
+    boolean estavivo;
+
+    //construtores
+    Pessoa() {
+
+    }
+
+    Pessoa(String nomePessoa, int idadePessoa) {
+
+        this.nome = nomePessoa;
+        this.idade = idadePessoa;
+    }
+
+    Pessoa(boolean vivoOuMorta) {
+
+        this.estavivo = vivoOuMorta;
+
+    }
+
+    public Pessoa(boolean estavivo, int idadeDoIndividuo) {
+
+        this.estavivo = estavivo;
+        this.idade = idadeDoIndividuo;
+    }
+
+    //metodos
+    public void declararStatus(boolean statusVida) {
+        this.estavivo = statusVida;
+        JOptionPane.showMessageDialog(null, "O " + this.nome + "Esta: " + this.estavivo);
+    }
+
+    //metodos
+    public void cadastrar(String nomeUsuario, int idadeUsuario) {
+        this.nome = nomeUsuario;
+        this.idade = idadeUsuario;
+        JOptionPane.showMessageDialog(null, "Nome: " + this.nome + "\nIdade " + this.idade);
+    }
+
+    //metodos
+    public String realizarProvaDeVida(String nome, int idade, boolean estaVivo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.estavivo = estaVivo;
+
+        String vida;
+
+        if (this.estavivo = true) {
+            vida = "Vivo";
+        } else {
+            vida = "Morto";
+        }
+        
+        return "O " + this.nome + ""
+                + "\ntem a idade de: " + this.idade + ""
+                + "\ne esta: " + vida;
+    }
+    
+    //Metodos
+     private void toPrint() {
+         JOptionPane.showMessageDialog(null, this.idade + ""
+                + "\ntem a idade de " + this.idade + " "
+                + "\ne seu status de vida e: " + this.estavivo);
+        
+    }
+
+    public static void main(String[] args) {
+
+        //Primeiro Objeto
+        Pessoa ind1 = new Pessoa();
+        ind1.estavivo = true;
+        ind1.idade = 16;
+        ind1.nome = "Lucas";
+        ind1.toPrint();
+        System.out.println(ind1.realizarProvaDeVida("Joana", 20, true));
+
+        //Segundo Objeto
+        Pessoa ind2 = new Pessoa(true);
+
+        //Terceiro Objeto
+        Pessoa ind3 = new Pessoa("Bruno", 20);
+
+        //Quarto Obejto
+        Pessoa ind4 = new Pessoa(false, 80);
+
+    }
+
+   
+
+}
