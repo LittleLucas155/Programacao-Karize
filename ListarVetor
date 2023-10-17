@@ -1,0 +1,86 @@
+
+package metodos;
+
+import javax.swing.JOptionPane;
+
+/*Listar Vetor - mostrar o conteúdo do vetor
+Exibir apenas os números pares do vetor
+Exibir apenas os números ímpares do vetor
+Exibir a quantidade de números pares existem nas posições ímpares do vetor
+Exibir a quantidade de números ímpares existem nas posições pares do vetor */
+public class Metodos {
+
+    public static void main(String[] args) {
+
+        //Descobrir tamanho do vetor
+        int tamVetor = Integer.parseInt(JOptionPane.showInputDialog("Digite quantas posições deseja no vetor: "));
+
+        //Criação do vetor
+        int[] numeros = new int[tamVetor];
+
+        //Alimentar vetor
+        for (int i = 0; i < tamVetor; i++) {
+            numeros[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor " + (i + 1)));
+        }
+
+        listarVetor(numeros);
+        listaNumerosPares(numeros);
+        ListarNumerosImpares(numeros);
+        ListaNumerosParesImpares(numeros);
+        
+    } //Termina o main
+
+    //Listar vetor
+    public static void listarVetor(int[] numerosDigitados) {
+
+        for (int i = 0; i < numerosDigitados.length; i++) {
+            System.out.println("Numero: " + numerosDigitados[i]);
+
+        }
+
+    }
+
+    //Numeros pares    
+    public static void listaNumerosPares(int[] numeros) {
+
+        int cont = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 0) {
+                System.out.println("Numero par: " + numeros[i]);
+                cont++;
+            }
+            
+          
+        }
+
+          System.out.println("Quantidades de numeros pares: " + cont);
+    }
+    
+    //Listar numero impares
+    public static void ListarNumerosImpares(int[] num) {
+        
+        int cont = 0;
+        for (int i = 0; i < num.length; i++) {
+            if (num[i] % 2 != 0) {
+                System.out.println("Numeros Impares: " + num[i]);
+                cont++;
+                
+            }
+            
+        }
+        
+        System.out.println("Quantidades de numeros impares: " + cont);
+    }
+    
+    public static void ListaNumerosParesImpares(int[]num2){
+        
+        for (int i = 0; i < num2.length; i++) {
+            if (i % 2 == 0 && num2[i] % 2 != 0) {
+                System.out.println("Posição: " + i + "Valor impar = " + num2[i]);
+                
+            }
+        }
+    }
+
+}
+
