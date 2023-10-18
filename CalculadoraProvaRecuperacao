@@ -1,0 +1,47 @@
+package prova;
+
+import javax.swing.JOptionPane;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+
+        int a, b;
+
+        a = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor de A: "));
+        b = Integer.parseInt(JOptionPane.showInputDialog("Informe o valor de B: "));
+
+        somaNumeros(a, b);
+        subtraçaoNumeros(a, b);
+        multiplicacaoNumeros(a, b);
+        divisaoNumeros(a, b);
+    }
+
+    public static void somaNumeros(int a, int b) {
+
+        System.out.println("A soma de " + a + " + " + b + " é " + (a + b));
+
+    }
+
+    public static void subtraçaoNumeros(int a, int b) {
+
+        System.out.println("A subtraçao de " + a + " - " + b + " é " + (a - b));
+
+    }
+
+    public static void multiplicacaoNumeros(int a, int b) {
+
+        System.out.println("A multiplicação de " + a + " * " + b + " é " + (a * b));
+    }
+
+    public static void divisaoNumeros(int a, int b) {
+
+        if (a == 0 && b == 0) {
+            System.out.println("Numero invalido ");
+
+        } else {
+            System.out.println("A divisão de " + a + " / " + b + " é " + (a / b));
+        }
+    }
+
+}
