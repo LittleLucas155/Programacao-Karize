@@ -1,0 +1,93 @@
+package prova;
+
+import javax.swing.JOptionPane;
+
+public class Banco {
+
+    public static int consultarSaldo;
+    public static double realizarDeposito;
+    public static double contDeposito;
+    public static double realizarSaque;
+    public static double contSaque;
+    public static int exibirMenu;
+    public static int banco = 0;
+
+    public static void main(String[] args) {
+
+        while (true) {
+
+            banco = Integer.parseInt(JOptionPane.showInputDialog("Qual operação você deseja realizar? "
+                    + "\n1 - Realizar deposito "
+                    + "\n2 - Realizar saque "
+                    + "\n3 - Total de saldo "
+                    + "\n4 - Emitir extrato "));
+
+            switch (banco) {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "Deposito realizado: " + depositar());
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Saque realizado: " + sacar());
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null, saldo());
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null, emitirExtrato());
+                    break;
+
+            }
+
+        }
+
+    }
+
+    public static int depositar() {
+
+        double valor;
+
+        valor = Integer.parseInt(JOptionPane.showInputDialog("Qual valor você deseja depositar: "));
+
+        realizarDeposito = realizarDeposito + valor;
+        contDeposito++;
+
+        return consultarSaldo = (int) (consultarSaldo + valor);
+
+    }
+
+    public static int sacar() {
+
+        double valor;
+
+        valor = Integer.parseInt(JOptionPane.showInputDialog("Qual valor você deseja sacar: "));
+
+        if (realizarSaque < realizarDeposito) {
+            JOptionPane.showMessageDialog(null, "Impossivel realizar essa operação");
+            return banco;
+        } 
+            realizarSaque = realizarSaque + valor;
+            contSaque++;
+        
+
+        return consultarSaldo = (int) (consultarSaldo - valor);
+
+    }
+
+    public static String saldo() {
+
+        return "Seu saldo é: " + consultarSaldo;
+
+    }
+
+    public static String emitirExtrato() {
+
+        String relatorio = "";
+
+        relatorio += "================= Relatorio Banco =================\n"
+                + "\nValor total de deposito: " + realizarDeposito
+                + "\nvalor total de saque: " + realizarSaque;
+
+        return relatorio;
+    }
+
+}
