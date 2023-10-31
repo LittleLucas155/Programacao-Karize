@@ -1,0 +1,55 @@
+package poo;
+
+import javax.swing.JOptionPane;
+
+public class Animal {
+
+    //atributos
+    String nome;
+    String especie;
+    float peso;
+    String cor;
+    int idade;
+
+    //construtor default
+    public Animal() {
+
+    }
+
+    public Animal(String nome, String especie, float peso, String cor, int idade) {
+
+        this.nome = nome;
+        this.especie = especie;
+        this.peso = peso;
+        this.cor = cor;
+        this.idade = idade;
+
+    }
+
+    public Animal(String nome, String especie) {
+
+        this.nome = nome;
+        this.especie = especie;
+    }
+
+    //metodo sem retorno
+    public void alimentar() {
+
+        JOptionPane.showMessageDialog(null, "O animal esta se alimentando!");
+
+    }
+
+    //metodo com retorno
+    public String movimentar() {
+        
+        String move = JOptionPane.showInputDialog("Como ele se movimenta?");
+        return move;
+    }
+    
+    //metodo com retorno e com argumentos
+    public float calcularTamanho(float comprimento, float largura) {
+        
+        float tamanho = comprimento * largura;
+        return tamanho;
+    }
+}
