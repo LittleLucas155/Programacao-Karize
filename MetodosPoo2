@@ -1,0 +1,16 @@
+
+package poo;
+
+
+public class cachorro {
+    
+    String raca;
+    String pelo;
+    
+    public static void main(String[] args) {
+        
+        Animal cao = new Animal("Leozinho", "Canina", 17, "Preto", 1);
+        Animal cao2 = new Animal("Bob", "Canina");
+    }
+    
+}
